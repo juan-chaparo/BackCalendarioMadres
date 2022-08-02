@@ -17,3 +17,22 @@ export const getActivitiesContributions = async (req, res) => {
     res.send(error.message);
   }
 };
+
+export const createActivitiesContributions = async (req, res) => {
+  const { id_activity, id_contribution } = req.body;
+  if (id_activity == null || id_contribution == null) {
+    return res.status(400).json({ msg: "Bad Request. Please fill all fiel" });
+  }
+  try {
+    const pool = await getConnection();
+    await pool
+      .request()
+      .input("Id_activity", sql.Int, id_activity)
+      .input("Id_contribution", sql.Int, id_contribution)
+      .query(queries.createActivitiesContributions);
+    res.json("Registrado");
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};

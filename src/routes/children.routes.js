@@ -7,12 +7,10 @@ import {
 } from "../controllers/children.controller";
 const router = Router();
 
-router.get("/children", getChildren);
-
 router.post("/children", createNewChildren);
 
-router.get("/childrenSearch", getChildrenById);
+router.get("/children", getChildrenById);
 
-router.put("/children/:id", updateChildrenId);
+router.put("/children", updateChildrenId);
 
 export default router;

@@ -6,7 +6,7 @@ export const getContributions = async (req, res) => {
       id_contribution,
       contributions,
       id_type_contribution,
-      contributions_esp,
+      id_lenguage,
     } = req.query;
     const pool = await getConnection();
     const result = await pool
@@ -14,7 +14,7 @@ export const getContributions = async (req, res) => {
       .input("Id_contribution", id_contribution)
       .input("Contributions", contributions)
       .input("Id_type_contribution", id_type_contribution)
-      .input("Contributions_esp", contributions_esp)
+      .input("Id_lenguage", id_lenguage)
       .query(queries.getAllContributions);
     res.json(result.recordset);
   } catch (error) {

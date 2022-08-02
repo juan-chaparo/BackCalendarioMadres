@@ -1,40 +1,44 @@
 export const queries = {
   getAllAspects:
-    "EXEC SP_AM_ASPECTS_S @id_aspect = @Id_aspect, @name_aspect = @Name_aspect, @name_aspect_esp = @Name_aspect_esp",
+    "EXEC SP_AM_ASPECTS_S @id_aspect = @Id_aspect, @name_aspect = @Name_aspect, @id_lenguage=@Id_lenguage",
   getAllAttendances:
-    "EXEC SP_AM_ATTENDANCES_S @id_attendance = @Id_attendance, @name_attendances = @Name_attendances, @Abbreviation = @Abbreviation, @name_attendances_esp = @Name_attendances_esp",
+    "EXEC SP_AM_ATTENDANCES_S @id_attendance = @Id_attendance, @name_attendances = @Name_attendances, @Abbreviation = @Abbreviation, @id_lenguage=@Id_lenguage",
   getAllDepartments:
     "EXEC SP_AM_DEPARTMENTS_S @id_department = @Id_department, @name_departament = @Name_departament",
   getAllDocsTypes:
-    "EXEC SP_AM_DOCS_TYPES_S @id_doc_type = @Id_doc_type, @name_doc = @Name_doc, @abbreviation  = @Abbreviation, @name_doc_esp = @Name_doc_esp, @abbreviation_esp = @Abbreviation_esp",
+    "EXEC SP_AM_DOCS_TYPES_S @id_doc_type = @Id_doc_type, @name_doc = @Name_doc, @abbreviation  = @Abbreviation, @id_lenguage=@Id_lenguage",
   getAllEducationLevels:
-    "EXEC SP_AM_EDUCATION_LEVELS_S @id_education_level = @Id_education_level, @name_education_level = @Name_education_level, @name_education_level_esp = @Name_education_level_esp",
+    "EXEC SP_AM_EDUCATION_LEVELS_S @id_education_level = @Id_education_level, @name_education_level = @Name_education_level, @id_lenguage=@Id_lenguage",
   getAllGender:
-    "EXEC SP_AM_GENDER_S @id_gender = @Id_gender, @name_gender = @Name_gender, @name_gender_esp = @Name_gender_esp",
+    "EXEC SP_AM_GENDER_S @id_gender = @Id_gender, @name_gender = @Name_gender, @id_lenguage=@Id_lenguage",
   getAllMaterials:
-    "EXEC SP_AM_MATERIALS_S @id_material = @Id_material, @material = @Material, @material_esp = @Material_esp",
+    "EXEC SP_AM_MATERIALS_S @id_material = @Id_material, @material = @Material, @id_lenguage=@Id_lenguage",
   getAllMunicipalities:
     "EXEC SP_AM_MUNICIPALITIES_S @id_municipality = @Id_municipality, @name_municipality = @Name_municipality, @id_departments = @Id_departments",
   getAllPopulationTypes:
-    "EXEC SP_AM_POPULATION_TYPES_S @id_population_type = @Id_population_type, @name_population_type = @Name_population_type, @name_population_type_esp = @Name_population_type_esp",
+    "EXEC SP_AM_POPULATION_TYPES_S @id_population_type = @Id_population_type, @name_population_type = @Name_population_type, @id_lenguage=@Id_lenguage",
   getAllReasonWithdrawal:
-    "EXEC SP_AM_REASON_WITHDRAWAL_S @id_reason_withdrawal = @Id_reason_withdrawal, @name_reason_withdrawal = @Name_reason_withdrawal, @Abbreviation = @Abbreviation, @name_reason_withdrawal_esp = @Name_reason_withdrawal_esp",
+    "EXEC SP_AM_REASON_WITHDRAWAL_S @id_reason_withdrawal = @Id_reason_withdrawal, @name_reason_withdrawal = @Name_reason_withdrawal, @Abbreviation = @Abbreviation, @id_lenguage=@Id_lenguage",
   getAllRelationships:
-    "EXEC SP_AM_RELATIONSHIPS_S @id_relationship = @Id_relationship, @name_relationship = @Name_relationship, @name_relationship_esp = @Name_relationship_esp",
+    "EXEC SP_AM_RELATIONSHIPS_S @id_relationship = @Id_relationship, @name_relationship = @Name_relationship, @id_lenguage=@Id_lenguage",
   getAllRol:
-    "EXEC SP_AM_ROL_S @id_rol = @Id_rol, @rol = @Rol, @rol_esp = @Rol_esp",
+    "EXEC SP_AM_ROL_S @id_rol = @Id_rol, @rol = @Rol, @id_lenguage=@Id_lenguage",
   getAllServiciesTypes:
-    "EXEC SP_AM_SERVICES_TYPES_S @id_servicie_type = @Id_servicie_type, @name_service = @Name_service, @name_service_esp = @Name_service_esp",
+    "EXEC SP_AM_SERVICES_TYPES_S @id_servicie_type = @Id_servicie_type, @name_service = @Name_service, @id_lenguage=@Id_lenguage",
   getAllServiciesModality:
-    "EXEC SP_AM_SERVICIES_MODALITY_S @id_servicie_modality = @Id_servicie_modality, @name_service = @Name_service, @name_service_esp = @Name_service_esp",
+    "EXEC SP_AM_SERVICIES_MODALITY_S @id_servicie_modality = @Id_servicie_modality, @name_service = @Name_service, @id_lenguage=@Id_lenguage",
   getAllTypesContribution:
-    "EXEC SP_AM_TYPES_CONTRIBUTION_S @id_type_contribution = @Id_type_contribution, @type_contribution = @Type_contribution, @type_contribution_esp = @Type_contribution_esp",
+    "EXEC SP_AM_TYPES_CONTRIBUTION_S @id_type_contribution = @Id_type_contribution, @type_contribution = @Type_contribution, @id_lenguage=@Id_lenguage",
   getAllActivitiesContributions:
     "EXEC SP_AV_ACTIVITIES_CONTRIBUTIONS_S @id_activity_contribution  = @Id_activity_contribution, @id_activity  = @Id_activity, @id_contribution  = @Id_contribution",
+  createActivitiesContributions:
+    "EXEC SP_AV_ACTIVITIES_CONTRIBUTIONS_I @id_activity  = @Id_activity, @id_contribution  = @Id_contribution",
   getAllActivitiesMaterials:
     "EXEC SP_AV_ACTIVITIES_MATERIALS_S @id_activity_material = @Id_activity_material, @id_material = @Id_material, @id_activity = @Id_activity",
   getAllActivities:
-    "EXEC SP_AV_ACTIVITIES_S @id_activity = @Id, @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @description_esp = @Description_esp, @variants_esp = @Variants_esp, @adaptation_small_space_esp = @Adaptation_small_space_esp, @name_esp=@Name_esp",
+    "EXEC SP_AV_ACTIVITIES_S @id_activity = @Id, @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @id_lenguage=@Id_lenguage",
+  createAllActivities:
+    "EXEC SP_AV_ACTIVITIES_I @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @id_lenguage=@Id_lenguage",
   getAllActivityChild:
     "EXEC SP_AV_ACTIVITY_CHILD_S @id_activity_child  = @Id_activity_child, @id_schedule_activity  = @Id_schedule_activity, @id_child_uds  = @Id_child_uds, @description = @Description, @date_admission  = @Date_admission, @updt  = @Updt, @assistance  = @Assistance, @state  = @State",
   getAllAdminZonalCenters:
@@ -53,7 +57,6 @@ export const queries = {
     "EXEC SP_AV_CHILD_UDS_WEIGTH_S @id_child_uds_weigth = @Id_child_uds_weigth, @id_child_uds = @Id_child_uds, @weigth = @Weigth, @height = @Height, @date_admission = @Date_admission",
   getAllChildAttendants:
     "EXEC SP_AV_CHILDS_ATTENDANTS_S @id_child_attendants = @Id_child_attendants, @id_child = @Id_child, @id_attendants = @Id_attendants, @date_admission = @Date_admission, @id_relationship = @Id_relationship",
-  getAllChildren: "EXEC SP_AV_CHILDS_S",
   createNewChildren:
     "EXEC SP_AV_CHILDS_I @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB, @id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @state = @stateB, @id_gender = @id_genderB",
   getChildrenId:
@@ -63,7 +66,7 @@ export const queries = {
   getAllCommunity:
     "EXEC SP_AV_COMMUNITY_S @id_community = @Id_community, @id_schedule = @Id_schedule, @date_admission = @Date_admission, @state = @State",
   getAllContributions:
-    "EXEC SP_AV_CONTRIBUTIONS_S @id_contribution = @Id_contribution, @contributions = @Contributions, @id_type_contribution = @Id_type_contribution, @contributions_esp = @Contributions_esp",
+    "EXEC SP_AV_CONTRIBUTIONS_S @id_contribution = @Id_contribution, @contributions = @Contributions, @id_type_contribution = @Id_type_contribution,@id_lenguage=@Id_lenguage",
   getAllDiary:
     "EXEC SP_AV_DIARY_S @id_diary = @Id_diary, @id_schedule = @Id_schedule, @date_diary = @Date_diary",
   getAllFormRamDay:

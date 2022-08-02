@@ -1,18 +1,5 @@
 import { getConnection, sql, queries } from "../database";
 
-export const getChildren = async (req, res) => {
-  try {
-    const { id } = req.body;
-    const pool = await getConnection();
-    const result = await pool.request().query(queries.getAllChildren);
-    res.json(result.recordset);
-    console.log("f");
-  } catch (error) {
-    res.status(500);
-    res.send(error.message);
-  }
-};
-
 export const createNewChildren = async (req, res) => {
   const {
     first_name,
