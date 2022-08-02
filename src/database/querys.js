@@ -11,6 +11,8 @@ export const queries = {
     "EXEC SP_AM_EDUCATION_LEVELS_S @id_education_level = @Id_education_level, @name_education_level = @Name_education_level, @id_lenguage=@Id_lenguage",
   getAllGender:
     "EXEC SP_AM_GENDER_S @id_gender = @Id_gender, @name_gender = @Name_gender, @id_lenguage=@Id_lenguage",
+  getAllLenguage:
+    "EXEC SP_AM_LENGUAGE_S @id_lenguage = @Id_lenguage, @name_lenguage = @Name_lenguage",
   getAllMaterials:
     "EXEC SP_AM_MATERIALS_S @id_material = @Id_material, @material = @Material, @id_lenguage=@Id_lenguage",
   getAllMunicipalities:
