@@ -1,7 +1,6 @@
 import { Router } from "express";
 import {
   createNewChildren,
-  getChildren,
   getChildrenById,
   updateChildrenId,
 } from "../controllers/children.controller";

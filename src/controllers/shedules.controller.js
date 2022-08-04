@@ -19,3 +19,43 @@ export const getShedules = async (req, res) => {
     res.send(error.message);
   }
 };
+export const createShedules = async (req, res) => {
+  const { name, id_agent_uds, start_shuedule } = req.body;
+  if (name == null || id_agent_uds == null || start_shuedule == null) {
+    return res.status(400).json({ msg: "Bad Request. Please fill all fiel" });
+  }
+  try {
+    const pool = await getConnection();
+    await pool
+      .request()
+      .input("Name", sql.VarChar, name)
+      .input("Id_agent_uds", sql.Int, id_agent_uds)
+      .input("Start_shuedule", sql.VarChar, start_shuedule)
+      .query(queries.createShedules);
+    res.json("Registrado");
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+export const updateShedules = async (req, res) => {
+  const { name, id_agent_uds, start_shuedule } = req.body;
+  const { id_schedule } = req.query;
+  if (id_schedule == null) {
+    return res.status(400).json({ msg: "Bad Request. Please fill all fiel" });
+  }
+  try {
+    const pool = await getConnection();
+    await pool
+      .request()
+      .input("Name", sql.VarChar, name)
+      .input("Id_agent_uds", sql.Int, id_agent_uds)
+      .input("Start_shuedule", sql.VarChar, start_shuedule)
+      .input("Id_schedule", sql.Int, id_schedule)
+      .query(queries.updateShedules);
+    res.json("Actualizado");
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};

@@ -35,56 +35,143 @@ export const queries = {
     "EXEC SP_AV_ACTIVITIES_CONTRIBUTIONS_S @id_activity_contribution  = @Id_activity_contribution, @id_activity  = @Id_activity, @id_contribution  = @Id_contribution",
   createActivitiesContributions:
     "EXEC SP_AV_ACTIVITIES_CONTRIBUTIONS_I @id_activity  = @Id_activity, @id_contribution  = @Id_contribution",
+  updateActivitiesContributions:
+    "EXEC SP_AV_ACTIVITIES_CONTRIBUTIONS_U @id_activity_contribution  = @Id_activity_contribution, @id_activity  = @Id_activity, @id_contribution  = @Id_contribution",
   getAllActivitiesMaterials:
     "EXEC SP_AV_ACTIVITIES_MATERIALS_S @id_activity_material = @Id_activity_material, @id_material = @Id_material, @id_activity = @Id_activity",
+  createActivitiesMaterials:
+    "EXEC SP_AV_ACTIVITIES_MATERIALS_I @id_material = @Id_material, @id_activity = @Id_activity",
+  updateActivitiesMaterials:
+    "EXEC SP_AV_ACTIVITIES_MATERIALS_U @id_activity_material = @Id_activity_material, @id_material = @Id_material, @id_activity = @Id_activity",
   getAllActivities:
     "EXEC SP_AV_ACTIVITIES_S @id_activity = @Id, @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @id_lenguage=@Id_lenguage",
-  createAllActivities:
-    "EXEC SP_AV_ACTIVITIES_I @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @id_lenguage=@Id_lenguage",
+  createActivities:
+    "EXEC SP_AV_ACTIVITIES_I @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space,@id_lenguage=@Id_lenguage",
+  updateActivities:
+    "EXEC SP_AV_ACTIVITIES_U @id_activity = @Id_activity, @name = @Name, @duration = @Duration, @description = @Description, @variants = @Variants, @img = @Img, @video = @Video, @adaptation_small_space = @Adaptation_small_space, @state = @State, @id_lenguage=@Id_lenguage",
   getAllActivityChild:
     "EXEC SP_AV_ACTIVITY_CHILD_S @id_activity_child  = @Id_activity_child, @id_schedule_activity  = @Id_schedule_activity, @id_child_uds  = @Id_child_uds, @description = @Description, @date_admission  = @Date_admission, @updt  = @Updt, @assistance  = @Assistance, @state  = @State",
+  createActivityChild:
+    "EXEC SP_AV_ACTIVITY_CHILD_I @id_schedule_activity  = @Id_schedule_activity, @id_child_uds  = @Id_child_uds, @description = @Description, @updt  = @Updt, @assistance  = @Assistance",
+  updateActivityChild:
+    "EXEC SP_AV_ACTIVITY_CHILD_U @id_activity_child  = @Id_activity_child, @id_schedule_activity  = @Id_schedule_activity, @id_child_uds  = @Id_child_uds, @description = @Description, @updt  = @Updt, @assistance  = @Assistance, @state  = @State",
   getAllAdminZonalCenters:
     "EXEC SP_AV_ADMIN_ZONAL_CENTERS_S @id_admin_zonal_center = @Id_admin_zonal_center, @id_admin = @Id_admin, @id_zonal_center = @Id_zonal_center, @date_admission = @Date_admission",
+  createAdminZonalCenters:
+    "EXEC SP_AV_ADMIN_ZONAL_CENTERS_I @id_admin = @Id_admin, @id_zonal_center = @Id_zonal_center",
+  updateAdminZonalCenters:
+    "EXEC SP_AV_ADMIN_ZONAL_CENTERS_U @id_admin_zonal_center = @Id_admin_zonal_center, @id_admin = @Id_admin, @id_zonal_center = @Id_zonal_center",
   getAllAdmins:
     "EXEC SP_AV_ADMINS_S @id_admin = @Id_admin, @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @num_doc = @Num_doc, @id_doc_type  = @Id_doc_type, @cellphone = @Cellphone, @date_birth  = @Date_birth, @date_admission  = @Date_admission, @id_user  = @Id_user",
+  createAdmins:
+    "EXEC SP_AV_ADMINS_I @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @num_doc = @Num_doc, @id_doc_type  = @Id_doc_type, @cellphone = @Cellphone, @date_birth  = @Date_birth, @id_user  = @Id_user",
+  updateAdmins:
+    "EXEC SP_AV_ADMINS_U @id_admin = @Id_admin, @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @num_doc = @Num_doc, @id_doc_type  = @Id_doc_type, @cellphone = @Cellphone, @date_birth  = @Date_birth, @id_user  = @Id_user",
   getAllAgentsCommunity:
     "EXEC SP_AV_AGENTS_COMMUNITY_S @id_agent_community = @Id_agent_community, @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @cellphone = @Cellphone, @num_doc  = @Num_doc, @id_doc_type = @Id_doc_type, @date_admission = @Date_admission, @id_education_level = @Id_education_level, @date_birth = @Date_birth, @state = @State, @img = @Img",
+  createAgentsCommunity:
+    "EXEC SP_AV_AGENTS_COMMUNITY_I @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @cellphone = @Cellphone, @num_doc  = @Num_doc, @id_doc_type = @Id_doc_type, @id_education_level = @Id_education_level, @date_birth = @Date_birth, @img = @Img",
+  updateAgentsCommunity:
+    "EXEC SP_AV_AGENTS_COMMUNITY_U @id_agent_community = @Id_agent_community, @first_name = @First_name, @second_name  = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @cellphone = @Cellphone, @num_doc  = @Num_doc, @id_doc_type = @Id_doc_type, @id_education_level = @Id_education_level, @date_birth = @Date_birth, @state = @State, @img = @Img",
   getAllAgentsUds:
     "EXEC SP_AV_AGENTS_UDS_S @id_agent_uds  = @Id_agent_uds, @id_agent_community  = @Id_agent_community, @id_uds  = @Id_uds, @date_admission  = @Date_admission, @id_user  = @Id_user",
+  createAgentsUds:
+    "EXEC SP_AV_AGENTS_UDS_I @id_agent_community  = @Id_agent_community, @id_uds  = @Id_uds, @id_user  = @Id_user",
+  updateAgentsUds:
+    "EXEC SP_AV_AGENTS_UDS_U @id_agent_uds  = @Id_agent_uds, @id_agent_community  = @Id_agent_community, @id_uds  = @Id_uds, @id_user  = @Id_user",
   getAllAttendants:
     "EXEC SP_AV_ATTENDANTS_S @id_attendant = @Id_attendant, @first_name = @First_name, @second_name = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @occupation = @Occupation, @date_birth  = @Date_birth, @id_education_level  = @Id_education_level, @date_start = @Date_start, @date_end = @Date_end, @address = @Address, @cellphone = @Cellphone, @live_child = @Live_child, @occasionally  = @Occasionally, @num_doc = @Num_doc, @id_doc_type = @Id_doc_type, @id_gender = @Id_gender, @date_admission = @Date_admission, @state = @State",
+  createAttendants:
+    "EXEC SP_AV_ATTENDANTS_I @first_name = @First_name, @second_name = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @occupation = @Occupation, @date_birth  = @Date_birth, @id_education_level  = @Id_education_level, @date_start = @Date_start, @date_end = @Date_end, @address = @Address, @cellphone = @Cellphone, @live_child = @Live_child, @occasionally  = @Occasionally, @num_doc = @Num_doc, @id_doc_type = @Id_doc_type, @id_gender = @Id_gender",
+  updateAttendants:
+    "EXEC SP_AV_ATTENDANTS_U @id_attendant = @Id_attendant, @first_name = @First_name, @second_name = @Second_name, @first_last_name = @First_last_name, @second_last_name = @Second_last_name, @occupation = @Occupation, @date_birth  = @Date_birth, @id_education_level  = @Id_education_level, @date_start = @Date_start, @date_end = @Date_end, @address = @Address, @cellphone = @Cellphone, @live_child = @Live_child, @occasionally  = @Occasionally, @num_doc = @Num_doc, @id_doc_type = @Id_doc_type, @id_gender = @Id_gender, @state = @State",
   getAllChildUds:
     "EXEC SP_AV_CHILD_UDS_S @id_child_uds = @Id_child_uds, @id_child = @Id_child, @id_agent_uds = @Id_agent_uds, @date_admission = @Date_admission, @state = @State",
+  createChildUds:
+    "EXEC SP_AV_CHILD_UDS_I @id_child = @Id_child, @id_agent_uds = @Id_agent_uds",
+  updateChildUds:
+    "EXEC SP_AV_CHILD_UDS_U @id_child_uds = @Id_child_uds, @id_child = @Id_child, @id_agent_uds = @Id_agent_uds,  @state = @State",
   getAllChildUdsWeigth:
     "EXEC SP_AV_CHILD_UDS_WEIGTH_S @id_child_uds_weigth = @Id_child_uds_weigth, @id_child_uds = @Id_child_uds, @weigth = @Weigth, @height = @Height, @date_admission = @Date_admission",
+  createChildUdsWeigth:
+    "EXEC SP_AV_CHILD_UDS_WEIGTH_I @id_child_uds = @Id_child_uds, @weigth = @Weigth, @height = @Height",
+  updateChildUdsWeigth:
+    "EXEC SP_AV_CHILD_UDS_WEIGTH_U @id_child_uds_weigth = @Id_child_uds_weigth, @id_child_uds = @Id_child_uds, @weigth = @Weigth, @height = @Height",
   getAllChildAttendants:
     "EXEC SP_AV_CHILDS_ATTENDANTS_S @id_child_attendants = @Id_child_attendants, @id_child = @Id_child, @id_attendants = @Id_attendants, @date_admission = @Date_admission, @id_relationship = @Id_relationship",
+  createChildAttendants:
+    "EXEC SP_AV_CHILDS_ATTENDANTS_I @id_child = @Id_child, @id_attendants = @Id_attendants, @id_relationship = @Id_relationship",
+  updateChildAttendants:
+    "EXEC SP_AV_CHILDS_ATTENDANTS_U @id_child_attendants = @Id_child_attendants, @id_child = @Id_child, @id_attendants = @Id_attendants, @id_relationship = @Id_relationship",
   createNewChildren:
-    "EXEC SP_AV_CHILDS_I @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB, @id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @state = @stateB, @id_gender = @id_genderB",
+    "EXEC SP_AV_CHILDS_I @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB, @id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @id_gender = @id_genderB",
   getChildrenId:
-    "EXEC SP_AV_CHILDS_S @id_child = @Id, @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB, @id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @state = @stateB, @id_gender = @id_genderB ",
+    "EXEC SP_AV_CHILDS_S @id_child = @Id, @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB,@date_admission=@Date_admission ,@id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @state = @stateB, @id_gender = @id_genderB ",
   updateChildrenId:
-    "EXEC SP_AV_CHILDS_U @id_child = @Id, @first_name = @first_nameB",
+    "EXEC SP_AV_CHILDS_U @id_child = @Id_child, @first_name = @first_nameB, @second_name = @second_nameB, @first_last_name =@first_last_nameB, @second_last_name = @second_last_nameB, @date_birth = @date_birthB, @num_docs = @num_docsB, @id_type_docs = @id_type_docsB, @id_uds = @id_udsB, @id_type_population = @id_type_populationB, @state = @stateB, @id_gender = @id_genderB ",
   getAllCommunity:
     "EXEC SP_AV_COMMUNITY_S @id_community = @Id_community, @id_schedule = @Id_schedule, @date_admission = @Date_admission, @state = @State",
+  createCommunity:
+    "EXEC SP_AV_COMMUNITY_I @id_schedule = @Id_schedule, @date_admission = @Date_admission, @state = @State",
+  updateCommunity:
+    "EXEC SP_AV_COMMUNITY_U @id_community = @Id_community, @id_schedule = @Id_schedule, @date_admission = @Date_admission, @state = @State",
   getAllContributions:
     "EXEC SP_AV_CONTRIBUTIONS_S @id_contribution = @Id_contribution, @contributions = @Contributions, @id_type_contribution = @Id_type_contribution,@id_lenguage=@Id_lenguage",
+  createContributions:
+    "EXEC SP_AV_CONTRIBUTIONS_I @contributions = @Contributions, @id_type_contribution = @Id_type_contribution,@id_lenguage=@Id_lenguage",
+  updateContributions:
+    "EXEC SP_AV_CONTRIBUTIONS_U @id_contribution = @Id_contribution, @contributions = @Contributions, @id_type_contribution = @Id_type_contribution,@id_lenguage=@Id_lenguage",
   getAllDiary:
     "EXEC SP_AV_DIARY_S @id_diary = @Id_diary, @id_schedule = @Id_schedule, @date_diary = @Date_diary",
+  createDiary:
+    "EXEC SP_AV_DIARY_I @id_schedule = @Id_schedule, @date_diary = @Date_diary",
+  updateDiary:
+    "EXEC SP_AV_DIARY_U @id_diary = @Id_diary, @id_schedule = @Id_schedule, @date_diary = @Date_diary",
   getAllFormRamDay:
     "EXEC SP_AV_FORM_RAM_DAY_S @id_form_ram_day = @Id_form_ram_day, @date_admission = @Date_admission, @id_attendance = @Id_attendance, @id_child_uds = @Id_child_uds",
+  createFormRamDay:
+    "EXEC SP_AV_FORM_RAM_DAY_I @id_attendance = @Id_attendance, @id_child_uds = @Id_child_uds",
+  updateFormRamDay:
+    "EXEC SP_AV_FORM_RAM_DAY_U @id_form_ram_day = @Id_form_ram_day, @id_attendance = @Id_attendance, @id_child_uds = @Id_child_uds",
   getAllShedulesActivities:
     "EXEC SP_AV_SCHEDULES_ACTIVITIES_S @id_schedule_activity = @Id_schedule_activity, @id_activity = @Id_activity, @id_schedule = @Id_schedule",
+  createShedulesActivities:
+    "EXEC SP_AV_SCHEDULES_ACTIVITIES_I @id_activity = @Id_activity, @id_schedule = @Id_schedule",
+  updateShedulesActivities:
+    "EXEC SP_AV_SCHEDULES_ACTIVITIES_U @id_schedule_activity = @Id_schedule_activity, @id_activity = @Id_activity, @id_schedule = @Id_schedule",
   getAllShedules:
     "EXEC SP_AV_SCHEDULES_S @id_schedule = @Id_schedule, @name = @Name, @date_admission = @Date_admission, @id_agent_uds = @Id_agent_uds, @start_shuedule = @Start_shuedule",
+  createShedules:
+    "EXEC SP_AV_SCHEDULES_I @name = @Name, @id_agent_uds = @Id_agent_uds, @start_shuedule = @Start_shuedule",
+  updateShedules:
+    "EXEC SP_AV_SCHEDULES_U @id_schedule = @Id_schedule, @name = @Name, @id_agent_uds = @Id_agent_uds, @start_shuedule = @Start_shuedule",
   getAllTracingChild:
     "EXEC SP_AV_TRACING_CHILD_S @id_tracing_child = @Id_tracing_child, @date_admission = @Date_admission, @id_child_uds = @Id_child_uds, @id_aspect = @Id_aspect, @description = @Description",
+  createTracingChild:
+    "EXEC SP_AV_TRACING_CHILD_I @id_child_uds = @Id_child_uds, @id_aspect = @Id_aspect, @description = @Description",
+  updateTracingChild:
+    "EXEC SP_AV_TRACING_CHILD_U @id_tracing_child = @Id_tracing_child, @id_child_uds = @Id_child_uds, @id_aspect = @Id_aspect, @description = @Description",
   getAllUds:
     "EXEC SP_AV_UDS_S @id_uds = @Id_uds, @name_uds = @Name_uds, @NIT = @NIT, @number_contract = @Number_contract, @code = @Code, @cellphone = @Cellphone, @address = @Address, @id_municipality = @Id_municipality, @id_servicie_type = @Id_servicie_type, @id_servicie_modality = @Id_servicie_modality, @date_admission = @Date_admission, @state = @State, @id_zonal_center = @Id_zonal_center",
+  createUds:
+    "EXEC SP_AV_UDS_I @name_uds = @Name_uds, @NIT = @NIT, @number_contract = @Number_contract, @code = @Code, @cellphone = @Cellphone, @address = @Address, @id_municipality = @Id_municipality, @id_servicie_type = @Id_servicie_type, @id_servicie_modality = @Id_servicie_modality, @id_zonal_center = @Id_zonal_center",
+  updateUds:
+    "EXEC SP_AV_UDS_U @id_uds = @Id_uds, @name_uds = @Name_uds, @NIT = @NIT, @number_contract = @Number_contract, @code = @Code, @cellphone = @Cellphone, @address = @Address, @id_municipality = @Id_municipality, @id_servicie_type = @Id_servicie_type, @id_servicie_modality = @Id_servicie_modality, @state = @State, @id_zonal_center = @Id_zonal_center",
   getAllUsers:
     "EXEC SP_AV_USERS_S @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State",
+  createUsers:
+    "EXEC SP_AV_USERS_I @email = @Email, @password = @Password, @id_rol = @Id_rol",
+  updateUsers:
+    "EXEC SP_AV_USERS_U @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State",
   getAllWithdrawal:
     "EXEC SP_AV_WITHDRAWAL_S @id_withdrawal = @Id_withdrawal, @id_child = @Id_child, @date_admission = @Date_admission, @id_reason = @Id_reason",
+  createWithdrawal:
+    "EXEC SP_AV_WITHDRAWAL_I @id_child = @Id_child, @id_reason = @Id_reason",
+  updateWithdrawal:
+    "EXEC SP_AV_WITHDRAWAL_U @id_withdrawal = @Id_withdrawal, @id_child = @Id_child, @id_reason = @Id_reason",
   getAllZonalCenters:
     "EXEC SP_AV_ZONAL_CENTERS_S @id_zonal_center = @Id_zonal_center, @name = @Name, @state = @State",
+  createZonalCenters: "EXEC SP_AV_ZONAL_CENTERS_I @name = @Name",
+  updateZonalCenters:
+    "EXEC SP_AV_ZONAL_CENTERS_U @id_zonal_center = @Id_zonal_center, @name = @Name, @state = @State",
 };

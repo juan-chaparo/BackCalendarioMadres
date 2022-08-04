@@ -24,3 +24,43 @@ export const getAgentsUds = async (req, res) => {
     res.send(error.message);
   }
 };
+export const createAgentsUds = async (req, res) => {
+  const { id_agent_community, id_uds, id_user } = req.body;
+  if (id_agent_community == null || id_uds == null || id_user == null) {
+    return res.status(400).json({ msg: "Bad Request. Please fill all fiel" });
+  }
+  try {
+    const pool = await getConnection();
+    await pool
+      .request()
+      .input("Id_agent_community", sql.Int, id_agent_community)
+      .input("Id_uds", sql.Int, id_uds)
+      .input("Id_user", sql.Int, id_user)
+      .query(queries.createAgentsUds);
+    res.json("Registrado");
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+export const updateAgentsUds = async (req, res) => {
+  const { id_agent_community, id_uds, id_user } = req.body;
+  const { id_agent_uds } = req.query;
+  if (id_agent_uds == null) {
+    return res.status(400).json({ msg: "Bad Request. Please fill all fiel" });
+  }
+  try {
+    const pool = await getConnection();
+    await pool
+      .request()
+      .input("Id_agent_community", sql.Int, id_agent_community)
+      .input("Id_uds", sql.Int, id_uds)
+      .input("Id_user", sql.Int, id_user)
+      .input("Id_agent_uds", sql.Int, id_agent_uds)
+      .query(queries.updateAgentsUds);
+    res.json("Actualizado");
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
