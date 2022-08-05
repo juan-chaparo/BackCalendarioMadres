@@ -158,11 +158,11 @@ export const queries = {
   updateUds:
     "EXEC SP_AV_UDS_U @id_uds = @Id_uds, @name_uds = @Name_uds, @NIT = @NIT, @number_contract = @Number_contract, @code = @Code, @cellphone = @Cellphone, @address = @Address, @id_municipality = @Id_municipality, @id_servicie_type = @Id_servicie_type, @id_servicie_modality = @Id_servicie_modality, @state = @State, @id_zonal_center = @Id_zonal_center",
   getAllUsers:
-    "EXEC SP_AV_USERS_S @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State",
+    "EXEC SP_AV_USERS_S @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State, @token=@Token",
   createUsers:
-    "EXEC SP_AV_USERS_I @email = @Email, @password = @Password, @id_rol = @Id_rol",
+    "EXEC SP_AV_USERS_I @email = @Email, @password = @Password, @id_rol = @Id_rol, @token=@Token",
   updateUsers:
-    "EXEC SP_AV_USERS_U @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State",
+    "EXEC SP_AV_USERS_U @id_user = @Id_user, @email = @Email, @password = @Password, @id_rol = @Id_rol, @state = @State, @token=@Token",
   getAllWithdrawal:
     "EXEC SP_AV_WITHDRAWAL_S @id_withdrawal = @Id_withdrawal, @id_child = @Id_child, @date_admission = @Date_admission, @id_reason = @Id_reason",
   createWithdrawal:
