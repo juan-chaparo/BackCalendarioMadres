@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js --exec babel-node"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "migrations:run": "sequelize-cli db:migrate"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,11 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
-    "mssql": "^8.1.2"
+    "mssql": "^8.1.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.4",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
